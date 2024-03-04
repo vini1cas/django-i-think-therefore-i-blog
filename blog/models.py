@@ -16,6 +16,10 @@ class Post(models.Model):
     status = models.IntegerField(choices=STATUS, default=0)
     experpt = models.TextField(blank=True)
     updated_on = models.DateTimeField(auto_now=True)
+    class Meta:
+        ordering = ["-created_on"]
+    def __str__(self):
+        return f"The title of this post is {self.title} | written by {selt.author}"
 
 
 class Comment(models.Model):
@@ -28,3 +32,7 @@ class Comment(models.Model):
         Post, on_delete=models.CASCADE, related_name="post_comments"
     )
     approved = models.BooleanField(default=False)
+    class Meta:
+        ordering = ["created_on"]
+    def __str__(self):
+        return f"Comment {self.body}  by {selt.author}"
