@@ -31,7 +31,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = [
     '8000-vini1cas-djangoithinkth-5h1xh2eb6lm.ws-eu108.gitpod.io',
-    'i-think-therefore-i-blog-vini-8d81a4f6e66e.herokuapp.com/',
+    'i-think-therefore-i-blog-vini-8d81a4f6e66e.herokuapp.com',
     ]
 
 
