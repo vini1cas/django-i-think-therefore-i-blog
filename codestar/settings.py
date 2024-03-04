@@ -30,7 +30,7 @@ SECRET_KEY = os.environ.get("SECRET_KEY")
 DEBUG = True
 
 ALLOWED_HOSTS = ['8000-vini1cas-djangoithinkth-5h1xh2eb6lm.ws-eu108.gitpod.io',
-                '.herokuapp.com']
+                'i-think-therefore-i-blog-vini-8d81a4f6e66e.herokuapp.com/']
 
 
 # Application definition
@@ -89,6 +89,11 @@ WSGI_APPLICATION = "codestar.wsgi.application"
 DATABASES = {
     'default': dj_database_url.parse(os.environ.get("DATABASE_URL"))
 }
+
+CSRF_TRUSTED_ORIGINS = [
+    "https://*.codeanyapp.com",
+    "https://*.herokuapp.com"
+]
 
 
 # Password validation
