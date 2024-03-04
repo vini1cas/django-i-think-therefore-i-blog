@@ -15,3 +15,16 @@ class Post(models.Model):
     created_on = models.DateTimeField(auto_now_add=True)
     status = models.IntegerField(choices=STATUS, default=0)
     experpt = models.TextField(blank=True)
+    updated_on = models.DateTimeField(auto_now=True)
+
+
+class Comment(models.Model):
+    author = models.ForeignKey(
+        User, on_delete=models.CASCADE, related_name="user_comments"
+    )
+    body = models.TextField()
+    created_on = models.DateTimeField(auto_now_add=True)
+    post = models.ForeignKey(
+        Post, on_delete=models.CASCADE, related_name="post_comments"
+    )
+    approved = models.BooleanField(default=False)
